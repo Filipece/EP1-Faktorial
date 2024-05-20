@@ -14,13 +14,13 @@ Module Program
                 If number < 0 Then
                     Console.WriteLine("Nelze zadávat záporné hodnoty.")
                 ElseIf number > 10 Then
-                    Console.WriteLine("Pøíliš vysoká hodnota, Zadejte èíslo mezi 0 a 10.")
+                    Console.WriteLine("Pøíliš vysoká hodnota, Zadej èíslo mezi 0 a 10.")
                 Else
                     Dim result As Integer = CalculateFactorial(number)
                     Console.WriteLine($"Faktoriál èísla {number} je {result}.")
                 End If
             Else
-                Console.WriteLine("Zadejte platné celé èíslo.")
+                Console.WriteLine("Zadej platné celé èíslo.")
             End If
 
             Console.WriteLine("Chceš pokraèovat? (a/n)")
