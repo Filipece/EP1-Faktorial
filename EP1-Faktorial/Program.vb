@@ -2,7 +2,7 @@ Imports System
 
 Module Program
     Sub Main()
-        Console.WriteLine("Zadej celé èíslo pro výpoèet faktoriálu:")
+        Console.WriteLine("Zadejte celé èíslo pro výpoèet faktoriálu:")
 
         Dim input As String = Console.ReadLine()
         Dim number As Integer
@@ -11,10 +11,10 @@ Module Program
             Dim result As Integer = CalculateFactorial(number)
             Console.WriteLine($"Faktoriál èísla {number} je {result}.")
         Else
-            Console.WriteLine("Zadej platné celé èíslo.")
+            Console.WriteLine("Prosím zadejte platné celé èíslo.")
         End If
 
-        Console.WriteLine("Stiskni libovolnou klávesu pro ukonèení programu.")
+        Console.WriteLine("Stisknìte libovolnou klávesu pro ukonèení programu.")
         Console.ReadKey()
     End Sub
 
@@ -26,3 +26,4 @@ Module Program
         End If
     End Function
 End Module
+
