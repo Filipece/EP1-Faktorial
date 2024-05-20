@@ -2,26 +2,33 @@ Imports System
 
 Module Program
     Sub Main()
-        Console.WriteLine("Zadejte celé èíslo pro výpoèet faktoriálu (0-10):")
+        Dim continueCalculation As Boolean = True
 
-        Dim input As String = Console.ReadLine()
-        Dim number As Integer
+        While continueCalculation
+            Console.WriteLine("Zadej celé èíslo pro výpoèet faktoriálu (0-10):")
 
-        If Integer.TryParse(input, number) Then
-            If number < 0 Then
-                Console.WriteLine("Nelze zadávat záporné hodnoty.")
-            ElseIf number > 10 Then
-                Console.WriteLine("Pøíliš vysoká hodnota, prosím zadejte èíslo mezi 0 a 10.")
+            Dim input As String = Console.ReadLine()
+            Dim number As Integer
+
+            If Integer.TryParse(input, number) Then
+                If number < 0 Then
+                    Console.WriteLine("Nelze zadávat záporné hodnoty.")
+                ElseIf number > 10 Then
+                    Console.WriteLine("Pøíliš vysoká hodnota, Zadejte èíslo mezi 0 a 10.")
+                Else
+                    Dim result As Integer = CalculateFactorial(number)
+                    Console.WriteLine($"Faktoriál èísla {number} je {result}.")
+                End If
             Else
-                Dim result As Integer = CalculateFactorial(number)
-                Console.WriteLine($"Faktoriál èísla {number} je {result}.")
+                Console.WriteLine("Zadejte platné celé èíslo.")
             End If
-        Else
-            Console.WriteLine("Prosím zadejte platné celé èíslo.")
-        End If
 
-        Console.WriteLine("Stisknìte libovolnou klávesu pro ukonèení programu.")
-        Console.ReadKey()
+            Console.WriteLine("Chceš pokraèovat? (a/n)")
+            Dim response As String = Console.ReadLine().ToLower()
+            If response <> "a" Then
+                continueCalculation = False
+            End If
+        End While
     End Sub
 
     Function CalculateFactorial(ByVal n As Integer) As Integer
@@ -32,6 +39,7 @@ Module Program
         End If
     End Function
 End Module
+
 
 
 
